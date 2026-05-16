@@ -47,6 +47,16 @@ public interface grammarProjectListener extends ParseTreeListener {
 	 */
 	void exitRole(grammarProjectParser.RoleContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link grammarProjectParser#permission}.
+	 * @param ctx the parse tree
+	 */
+	void enterPermission(grammarProjectParser.PermissionContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link grammarProjectParser#permission}.
+	 * @param ctx the parse tree
+	 */
+	void exitPermission(grammarProjectParser.PermissionContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link grammarProjectParser#transition}.
 	 * @param ctx the parse tree
 	 */
@@ -106,14 +116,4 @@ public interface grammarProjectListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitValue(grammarProjectParser.ValueContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link grammarProjectParser#cadena}.
-	 * @param ctx the parse tree
-	 */
-	void enterCadena(grammarProjectParser.CadenaContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link grammarProjectParser#cadena}.
-	 * @param ctx the parse tree
-	 */
-	void exitCadena(grammarProjectParser.CadenaContext ctx);
 }

@@ -1,0 +1,6 @@
+flujo MadreMia {
+	
+	rol maira@ puede [crear];
+
+
+}

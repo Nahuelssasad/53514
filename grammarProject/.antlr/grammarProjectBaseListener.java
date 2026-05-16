@@ -64,6 +64,18 @@ public class grammarProjectBaseListener implements grammarProjectListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterPermission(grammarProjectParser.PermissionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitPermission(grammarProjectParser.PermissionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterTransition(grammarProjectParser.TransitionContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -131,18 +143,6 @@ public class grammarProjectBaseListener implements grammarProjectListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitValue(grammarProjectParser.ValueContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterCadena(grammarProjectParser.CadenaContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitCadena(grammarProjectParser.CadenaContext ctx) { }
 
 	/**
 	 * {@inheritDoc}

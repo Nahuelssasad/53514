@@ -10,7 +10,7 @@ role:
 permission: CREATE | REFUSE | REVISE | APPROVE | ARCHIVE;
 transition: FROM ID TO ID WHEN condition SEMICOLON;
 condition: ID DOT permission | ID ISEQUAL value;
-action: ACTION ID LBRACE instruction* RBRACE SEMICOLON;
+action: ACTION ID LBRACE instruction* RBRACE;
 instruction:
 	ASSIGN ID ASSIGNVALUE value SEMICOLON
 	| REGISTER LPAREN STRING RPAREN SEMICOLON;
@@ -48,8 +48,8 @@ value: BOOLEAN | NUMBER | ID | STRING;
 //Palabras reservadas
 FLOW: 'flujo';
 STATE: 'estado';
-START: 'inicio';
-END: 'fin';
+START: 'inicial';
+END: 'final';
 ROLE: 'rol';
 CAN: 'puede';
 CREATE: 'crear';

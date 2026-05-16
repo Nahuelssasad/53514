@@ -1,21 +1,24 @@
-// Generated from d:/Universidad/2 AÑO/SSL/Proyecto/grammarProject/grammarProject.g4 by ANTLR 4.13.2
+// Generated from grammarProject.g4 by ANTLR 4.13.2
 // jshint ignore: start
 import antlr4 from 'antlr4';
-const serializedATN = [4,1,37,114,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,
+import grammarProjectListener from './grammarProjectListener.js';
+import grammarProjectVisitor from './grammarProjectVisitor.js';
+
+const serializedATN = [4,1,37,113,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,
 4,2,5,7,5,2,6,7,6,2,7,7,7,2,8,7,8,2,9,7,9,2,10,7,10,1,0,1,0,1,0,1,0,5,0,
 27,8,0,10,0,12,0,30,9,0,1,0,1,0,1,1,1,1,1,1,1,1,1,1,3,1,39,8,1,1,2,1,2,1,
 2,3,2,44,8,2,1,2,1,2,1,3,1,3,1,3,1,3,1,3,1,3,1,3,5,3,55,8,3,10,3,12,3,58,
 9,3,1,3,1,3,1,3,1,4,1,4,1,5,1,5,1,5,1,5,1,5,1,5,1,5,1,5,1,6,1,6,1,6,1,6,
 1,6,1,6,3,6,79,8,6,1,7,1,7,1,7,1,7,5,7,85,8,7,10,7,12,7,88,9,7,1,7,1,7,1,
-7,1,8,1,8,1,8,1,8,1,8,1,8,1,8,1,8,1,8,1,8,1,8,3,8,104,8,8,1,9,1,9,1,9,1,
-9,1,9,1,9,1,10,1,10,1,10,0,0,11,0,2,4,6,8,10,12,14,16,18,20,0,3,1,0,3,4,
-1,0,7,11,2,0,20,20,34,36,112,0,22,1,0,0,0,2,38,1,0,0,0,4,40,1,0,0,0,6,47,
-1,0,0,0,8,62,1,0,0,0,10,64,1,0,0,0,12,78,1,0,0,0,14,80,1,0,0,0,16,103,1,
-0,0,0,18,105,1,0,0,0,20,111,1,0,0,0,22,23,5,1,0,0,23,24,5,35,0,0,24,28,5,
-29,0,0,25,27,3,2,1,0,26,25,1,0,0,0,27,30,1,0,0,0,28,26,1,0,0,0,28,29,1,0,
-0,0,29,31,1,0,0,0,30,28,1,0,0,0,31,32,5,30,0,0,32,1,1,0,0,0,33,39,3,4,2,
-0,34,39,3,6,3,0,35,39,3,10,5,0,36,39,3,14,7,0,37,39,3,18,9,0,38,33,1,0,0,
-0,38,34,1,0,0,0,38,35,1,0,0,0,38,36,1,0,0,0,38,37,1,0,0,0,39,3,1,0,0,0,40,
+8,1,8,1,8,1,8,1,8,1,8,1,8,1,8,1,8,1,8,1,8,3,8,103,8,8,1,9,1,9,1,9,1,9,1,
+9,1,9,1,10,1,10,1,10,0,0,11,0,2,4,6,8,10,12,14,16,18,20,0,3,1,0,3,4,1,0,
+7,11,2,0,20,20,34,36,111,0,22,1,0,0,0,2,38,1,0,0,0,4,40,1,0,0,0,6,47,1,0,
+0,0,8,62,1,0,0,0,10,64,1,0,0,0,12,78,1,0,0,0,14,80,1,0,0,0,16,102,1,0,0,
+0,18,104,1,0,0,0,20,110,1,0,0,0,22,23,5,1,0,0,23,24,5,35,0,0,24,28,5,29,
+0,0,25,27,3,2,1,0,26,25,1,0,0,0,27,30,1,0,0,0,28,26,1,0,0,0,28,29,1,0,0,
+0,29,31,1,0,0,0,30,28,1,0,0,0,31,32,5,30,0,0,32,1,1,0,0,0,33,39,3,4,2,0,
+34,39,3,6,3,0,35,39,3,10,5,0,36,39,3,14,7,0,37,39,3,18,9,0,38,33,1,0,0,0,
+38,34,1,0,0,0,38,35,1,0,0,0,38,36,1,0,0,0,38,37,1,0,0,0,39,3,1,0,0,0,40,
 41,5,2,0,0,41,43,5,35,0,0,42,44,7,0,0,0,43,42,1,0,0,0,43,44,1,0,0,0,44,45,
 1,0,0,0,45,46,5,21,0,0,46,5,1,0,0,0,47,48,5,5,0,0,48,49,5,35,0,0,49,50,5,
 6,0,0,50,51,5,27,0,0,51,56,3,8,4,0,52,53,5,31,0,0,53,55,3,8,4,0,54,52,1,
@@ -26,13 +29,12 @@ const serializedATN = [4,1,37,114,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,
 0,0,74,79,3,8,4,0,75,76,5,35,0,0,76,77,5,25,0,0,77,79,3,20,10,0,78,72,1,
 0,0,0,78,75,1,0,0,0,79,13,1,0,0,0,80,81,5,15,0,0,81,82,5,35,0,0,82,86,5,
 29,0,0,83,85,3,16,8,0,84,83,1,0,0,0,85,88,1,0,0,0,86,84,1,0,0,0,86,87,1,
-0,0,0,87,89,1,0,0,0,88,86,1,0,0,0,89,90,5,30,0,0,90,91,5,21,0,0,91,15,1,
-0,0,0,92,93,5,16,0,0,93,94,5,35,0,0,94,95,5,24,0,0,95,96,3,20,10,0,96,97,
-5,21,0,0,97,104,1,0,0,0,98,99,5,17,0,0,99,100,5,22,0,0,100,101,5,34,0,0,
-101,102,5,23,0,0,102,104,5,21,0,0,103,92,1,0,0,0,103,98,1,0,0,0,104,17,1,
-0,0,0,105,106,5,18,0,0,106,107,5,35,0,0,107,108,5,19,0,0,108,109,5,34,0,
-0,109,110,5,21,0,0,110,19,1,0,0,0,111,112,7,2,0,0,112,21,1,0,0,0,7,28,38,
-43,56,78,86,103];
+0,0,0,87,89,1,0,0,0,88,86,1,0,0,0,89,90,5,30,0,0,90,15,1,0,0,0,91,92,5,16,
+0,0,92,93,5,35,0,0,93,94,5,24,0,0,94,95,3,20,10,0,95,96,5,21,0,0,96,103,
+1,0,0,0,97,98,5,17,0,0,98,99,5,22,0,0,99,100,5,34,0,0,100,101,5,23,0,0,101,
+103,5,21,0,0,102,91,1,0,0,0,102,97,1,0,0,0,103,17,1,0,0,0,104,105,5,18,0,
+0,105,106,5,35,0,0,106,107,5,19,0,0,107,108,5,34,0,0,108,109,5,21,0,0,109,
+19,1,0,0,0,110,111,7,2,0,0,111,21,1,0,0,0,7,28,38,43,56,78,86,102];
 
 
 const atn = new antlr4.atn.ATNDeserializer().deserialize(serializedATN);
@@ -44,7 +46,7 @@ const sharedContextCache = new antlr4.atn.PredictionContextCache();
 export default class grammarProjectParser extends antlr4.Parser {
 
     static grammarFileName = "grammarProject.g4";
-    static literalNames = [ null, "'flujo'", "'estado'", "'inicio'", "'fin'", 
+    static literalNames = [ null, "'flujo'", "'estado'", "'inicial'", "'final'", 
                             "'rol'", "'puede'", "'crear'", "'rechazar'", 
                             "'revisar'", "'aprobar'", "'archivar'", "'desde'", 
                             "'hacia'", "'cuando'", "'accion'", "'asignar'", 
@@ -390,8 +392,6 @@ export default class grammarProjectParser extends antlr4.Parser {
 	        }
 	        this.state = 89;
 	        this.match(grammarProjectParser.RBRACE);
-	        this.state = 90;
-	        this.match(grammarProjectParser.SEMICOLON);
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -412,33 +412,33 @@ export default class grammarProjectParser extends antlr4.Parser {
 	    let localctx = new InstructionContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 16, grammarProjectParser.RULE_instruction);
 	    try {
-	        this.state = 103;
+	        this.state = 102;
 	        this._errHandler.sync(this);
 	        switch(this._input.LA(1)) {
 	        case 16:
 	            this.enterOuterAlt(localctx, 1);
-	            this.state = 92;
+	            this.state = 91;
 	            this.match(grammarProjectParser.ASSIGN);
-	            this.state = 93;
+	            this.state = 92;
 	            this.match(grammarProjectParser.ID);
-	            this.state = 94;
+	            this.state = 93;
 	            this.match(grammarProjectParser.ASSIGNVALUE);
-	            this.state = 95;
+	            this.state = 94;
 	            this.value();
-	            this.state = 96;
+	            this.state = 95;
 	            this.match(grammarProjectParser.SEMICOLON);
 	            break;
 	        case 17:
 	            this.enterOuterAlt(localctx, 2);
-	            this.state = 98;
+	            this.state = 97;
 	            this.match(grammarProjectParser.REGISTER);
-	            this.state = 99;
+	            this.state = 98;
 	            this.match(grammarProjectParser.LPAREN);
-	            this.state = 100;
+	            this.state = 99;
 	            this.match(grammarProjectParser.STRING);
-	            this.state = 101;
+	            this.state = 100;
 	            this.match(grammarProjectParser.RPAREN);
-	            this.state = 102;
+	            this.state = 101;
 	            this.match(grammarProjectParser.SEMICOLON);
 	            break;
 	        default:
@@ -465,15 +465,15 @@ export default class grammarProjectParser extends antlr4.Parser {
 	    this.enterRule(localctx, 18, grammarProjectParser.RULE_notification);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
-	        this.state = 105;
+	        this.state = 104;
 	        this.match(grammarProjectParser.NOTIFY);
-	        this.state = 106;
+	        this.state = 105;
 	        this.match(grammarProjectParser.ID);
-	        this.state = 107;
+	        this.state = 106;
 	        this.match(grammarProjectParser.WITH);
-	        this.state = 108;
+	        this.state = 107;
 	        this.match(grammarProjectParser.STRING);
-	        this.state = 109;
+	        this.state = 108;
 	        this.match(grammarProjectParser.SEMICOLON);
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
@@ -497,7 +497,7 @@ export default class grammarProjectParser extends antlr4.Parser {
 	    var _la = 0;
 	    try {
 	        this.enterOuterAlt(localctx, 1);
-	        this.state = 111;
+	        this.state = 110;
 	        _la = this._input.LA(1);
 	        if(!(((((_la - 20)) & ~0x1f) === 0 && ((1 << (_la - 20)) & 114689) !== 0))) {
 	        this._errHandler.recoverInline(this);
@@ -615,6 +615,26 @@ class ProgramContext extends antlr4.ParserRuleContext {
 	    }
 	};
 
+	enterRule(listener) {
+	    if(listener instanceof grammarProjectListener ) {
+	        listener.enterProgram(this);
+		}
+	}
+
+	exitRule(listener) {
+	    if(listener instanceof grammarProjectListener ) {
+	        listener.exitProgram(this);
+		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof grammarProjectVisitor ) {
+	        return visitor.visitProgram(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -654,6 +674,26 @@ class DefinitionContext extends antlr4.ParserRuleContext {
 	    return this.getTypedRuleContext(NotificationContext,0);
 	};
 
+	enterRule(listener) {
+	    if(listener instanceof grammarProjectListener ) {
+	        listener.enterDefinition(this);
+		}
+	}
+
+	exitRule(listener) {
+	    if(listener instanceof grammarProjectListener ) {
+	        listener.exitDefinition(this);
+		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof grammarProjectVisitor ) {
+	        return visitor.visitDefinition(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -692,6 +732,26 @@ class StateContext extends antlr4.ParserRuleContext {
 	END() {
 	    return this.getToken(grammarProjectParser.END, 0);
 	};
+
+	enterRule(listener) {
+	    if(listener instanceof grammarProjectListener ) {
+	        listener.enterState(this);
+		}
+	}
+
+	exitRule(listener) {
+	    if(listener instanceof grammarProjectListener ) {
+	        listener.exitState(this);
+		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof grammarProjectVisitor ) {
+	        return visitor.visitState(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
 
 
 }
@@ -759,6 +819,26 @@ class RoleContext extends antlr4.ParserRuleContext {
 	};
 
 
+	enterRule(listener) {
+	    if(listener instanceof grammarProjectListener ) {
+	        listener.enterRole(this);
+		}
+	}
+
+	exitRule(listener) {
+	    if(listener instanceof grammarProjectListener ) {
+	        listener.exitRole(this);
+		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof grammarProjectVisitor ) {
+	        return visitor.visitRole(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -797,6 +877,26 @@ class PermissionContext extends antlr4.ParserRuleContext {
 	ARCHIVE() {
 	    return this.getToken(grammarProjectParser.ARCHIVE, 0);
 	};
+
+	enterRule(listener) {
+	    if(listener instanceof grammarProjectListener ) {
+	        listener.enterPermission(this);
+		}
+	}
+
+	exitRule(listener) {
+	    if(listener instanceof grammarProjectListener ) {
+	        listener.exitPermission(this);
+		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof grammarProjectVisitor ) {
+	        return visitor.visitPermission(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
 
 
 }
@@ -849,6 +949,26 @@ class TransitionContext extends antlr4.ParserRuleContext {
 	    return this.getToken(grammarProjectParser.SEMICOLON, 0);
 	};
 
+	enterRule(listener) {
+	    if(listener instanceof grammarProjectListener ) {
+	        listener.enterTransition(this);
+		}
+	}
+
+	exitRule(listener) {
+	    if(listener instanceof grammarProjectListener ) {
+	        listener.exitTransition(this);
+		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof grammarProjectVisitor ) {
+	        return visitor.visitTransition(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -888,6 +1008,26 @@ class ConditionContext extends antlr4.ParserRuleContext {
 	    return this.getTypedRuleContext(ValueContext,0);
 	};
 
+	enterRule(listener) {
+	    if(listener instanceof grammarProjectListener ) {
+	        listener.enterCondition(this);
+		}
+	}
+
+	exitRule(listener) {
+	    if(listener instanceof grammarProjectListener ) {
+	        listener.exitCondition(this);
+		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof grammarProjectVisitor ) {
+	        return visitor.visitCondition(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -923,10 +1063,6 @@ class ActionContext extends antlr4.ParserRuleContext {
 	    return this.getToken(grammarProjectParser.RBRACE, 0);
 	};
 
-	SEMICOLON() {
-	    return this.getToken(grammarProjectParser.SEMICOLON, 0);
-	};
-
 	instruction = function(i) {
 	    if(i===undefined) {
 	        i = null;
@@ -937,6 +1073,26 @@ class ActionContext extends antlr4.ParserRuleContext {
 	        return this.getTypedRuleContext(InstructionContext,i);
 	    }
 	};
+
+	enterRule(listener) {
+	    if(listener instanceof grammarProjectListener ) {
+	        listener.enterAction(this);
+		}
+	}
+
+	exitRule(listener) {
+	    if(listener instanceof grammarProjectListener ) {
+	        listener.exitAction(this);
+		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof grammarProjectVisitor ) {
+	        return visitor.visitAction(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
 
 
 }
@@ -993,6 +1149,26 @@ class InstructionContext extends antlr4.ParserRuleContext {
 	    return this.getToken(grammarProjectParser.RPAREN, 0);
 	};
 
+	enterRule(listener) {
+	    if(listener instanceof grammarProjectListener ) {
+	        listener.enterInstruction(this);
+		}
+	}
+
+	exitRule(listener) {
+	    if(listener instanceof grammarProjectListener ) {
+	        listener.exitInstruction(this);
+		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof grammarProjectVisitor ) {
+	        return visitor.visitInstruction(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -1032,6 +1208,26 @@ class NotificationContext extends antlr4.ParserRuleContext {
 	    return this.getToken(grammarProjectParser.SEMICOLON, 0);
 	};
 
+	enterRule(listener) {
+	    if(listener instanceof grammarProjectListener ) {
+	        listener.enterNotification(this);
+		}
+	}
+
+	exitRule(listener) {
+	    if(listener instanceof grammarProjectListener ) {
+	        listener.exitNotification(this);
+		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof grammarProjectVisitor ) {
+	        return visitor.visitNotification(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -1066,6 +1262,26 @@ class ValueContext extends antlr4.ParserRuleContext {
 	STRING() {
 	    return this.getToken(grammarProjectParser.STRING, 0);
 	};
+
+	enterRule(listener) {
+	    if(listener instanceof grammarProjectListener ) {
+	        listener.enterValue(this);
+		}
+	}
+
+	exitRule(listener) {
+	    if(listener instanceof grammarProjectListener ) {
+	        listener.exitValue(this);
+		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof grammarProjectVisitor ) {
+	        return visitor.visitValue(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
 
 
 }

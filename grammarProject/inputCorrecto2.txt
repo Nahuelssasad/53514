@@ -1,0 +1,5 @@
+flujo proyectoGramatica {
+
+	estado borrador inicial;
+
+ }
