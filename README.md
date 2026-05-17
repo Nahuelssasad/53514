@@ -1,6 +1,10 @@
+# Instruccion de Uso
+
+- 1.Ejecutar en la consola el comando `node index.js`.Dentro de index.js se puede cambiar el input o como prompteo cuando se ejecute el comando.
+
 # Gramatica del Lenguaje
 
-`
+````
 <programa> ::= "flujo" <identificador> "{" { <definicion> } "}" ;
 
 <definicion> ::= <estado>
@@ -99,7 +103,7 @@ const Nombre_de_flujo = {
   acciones: {},
   notificaciones: [],
 };
-```
+````
 
 ## 2 Estados (<estado>)
 
@@ -246,4 +250,16 @@ Permiten enviar mensajes a un rol específico.
 ```js
 console.log("Notificación enviada");
 ```
-# 
+
+# Reglas semanticas
+
+- 1.Solo debe haber un estado inicial.
+- 2.Debe haber al menos un estado inicial.
+- 3.No puede haber estados repetidos.
+- 4.Roles no repetidos
+- 5.Las transiciones deben referenciar a estados existentes.
+
+## Mejoras
+
+Se podrian agregar otras reglas semanticas como por ejemplo que las condiciones
+provengan de roles validos o que los permisos utilizados deben pertenecer al rol correspondiente.

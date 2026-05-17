@@ -7,4 +7,3 @@ flujo Tesis {
  accion sellar { asignar estadoAprobado ="aprobado";registrar("Documento aprobado");}
  notificar director con "La tesis fue aprobada";
 }
- 

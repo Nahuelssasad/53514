@@ -1,0 +1,6 @@
+flujo Tesis {
+ estado borrador inicial;
+ estado revision inicial;
+ estado aprobado final;
+ rol director puede [revisar,aprobar];
+}

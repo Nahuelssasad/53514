@@ -11,7 +11,7 @@ async function main() {
 
     // Intento leer la entrada desde el archivo input - en forma sincrona.
     try {
-        input = fs.readFileSync('inputCorrecto1.txt', 'utf8');
+        input = fs.readFileSync('D:/Universidad/2 AÑO/SSL/Proyecto/grammarProject/inputCorrecto1.txt', 'utf8');
     } 
     catch (err) {
         // Si no es posible leer el archivo, solicitar la entrada del usuario por teclado
@@ -29,16 +29,23 @@ let lexer = new grammarProjectLexer(inputStream);
 
 
 //Validar errores léxicos
+let hayErroresLexicos = false;
 lexer.removeErrorListeners();
 lexer.addErrorListener({
     syntaxError(recognizer, offendingSymbol, line, column, msg) {
         console.error(`Error léxico en línea ${line}, columna ${column}: ${msg}`);
+        hayErroresLexicos = true;
      }
 });
+
 
 //Verificar si el lexer está generando tokens 
 console.log("Verificando tokens generados por el lexer...");
 const tokens = lexer.getAllTokens();
+if (hayErroresLexicos) {
+    console.error("Se encontraron errores léxicos en la entrada. Corrige los errores y vuelve a intentarlo.");
+    return;
+}
 if (tokens.length === 0) {
      console.error("No se generaron tokens. Verifica la entrada y la gramática.");
     return;
@@ -77,6 +84,7 @@ let tree = parser.program();
 if (parser.syntaxErrorsCount > 0) 
     {
         console.error("\nSe encontraron errores de sintáxis en el código.");
+        return
     } 
 
 else 
@@ -90,19 +98,24 @@ console.log("\n--------------------------------------------------");
 console.log("Traducción a JavaScript:");
 console.log("--------------------------------------------------")
 
-const visitor = new CustomMiGrammarProjectVisitor();
-const codigoGenerado = visitor.visit(tree);
+
 
 //mostrar el código generado
 console.log("\nCódigo generado:");
-console.log(codigoGenerado);
 
-//Mostrar y ejecutar el código generado
-
-console.log("\n--------------------------------------------------");
-console.log("Ejecución:");
-console.log("--------------------------------------------------");
-eval(codigoGenerado);
+try {
+    const visitor = new CustomMiGrammarProjectVisitor();
+    const codigoGenerado = visitor.visit(tree);
+    
+    console.log(codigoGenerado);
+    
+    console.log("\n--------------------------------------------------");
+    console.log("Ejecución:");
+    console.log("--------------------------------------------------");
+    eval(codigoGenerado);
+} catch(err) {
+    console.error(`\nError: ${err.message}`);  // ← captura el throw limpiamente
+}
 
 
 
