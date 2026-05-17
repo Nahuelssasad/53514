@@ -4,7 +4,7 @@
 
 # Gramatica del Lenguaje
 
-````
+```
 <programa> ::= "flujo" <identificador> "{" { <definicion> } "}" ;
 
 <definicion> ::= <estado>
@@ -72,8 +72,7 @@
 <letra> ::= "a" | ... | "z" | "A" | ... | "Z" ;
 
 <digito> ::= "0" | ... | "9" ;
-
-`
+```
 
 # Correspondencia de estructuras con JavaScript
 
@@ -103,7 +102,7 @@ const Nombre_de_flujo = {
   acciones: {},
   notificaciones: [],
 };
-````
+```
 
 ## 2 Estados (<estado>)
 
